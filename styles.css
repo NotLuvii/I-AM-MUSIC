@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Font1';
+    src: url('fonts/LongTall.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font2';
+    src: url('fonts/Swiss 911 Compressed Regular.otf') format('truetype');
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(rgba(194, 194, 194, 0.836), rgba(255, 255, 255, 0.688)), url('bg.png');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    color: white; /* Makes text visible against a darker background */
+}
+
+.header-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.static-text {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Add space between letters */
+}
+
+/* Ensure the rest of the text making layout is unaffected */
+.dynamic-content {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.input-container {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 50px;
+}
+
+#text-input {
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.options {
+    margin-top: 10px;
+}
+
+.instructions {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.text-container {
+    display: flex;
+    margin-top: 230px;
+    gap: 0; /* Remove additional gap between letters */
+}
+
+.letter-container {
+    display: inline-block; /* Each letter gets its own bounding box */
+    width: 30px; /* Fixed width for consistent spacing */
+    text-align: center;
+}
+
+.letter {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+}
+
+.letter span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.font1 {
+    font-family: 'Font1';
+    font-size: 6rem;
+    z-index: 1;
+    color: black;
+    letter-spacing: 0; /* Reset letter spacing */
+}
+
+.font2 {
+    font-family: 'Font2';
+    font-size: 3rem;
+    color: black;
+    z-index: 2;
+    opacity: 0.8;
+    top: 52%; /* Adjust vertical alignment slightly */
+    left: 48%; /* Shift Font2 slightly to the left */
+}
+
+/* Optional styling for spaces */
+.letter[data-char="space"] {
+    visibility: hidden; /* Hide space characters */
+}
+
+.slider-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#width-slider {
+    width: 300px;
+    margin-top: 10px;
+}
